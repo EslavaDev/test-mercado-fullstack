@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/EslavaDev/ml-back.git"
+    "url": "git+https://github.com/EslavaDev/test-mercado-fullstack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/EslavaDev/ml-back/issues"
+    "url": "https://github.com/EslavaDev/test-mercado-fullstack/issues"
   },
-  "homepage": "https://gitlab.com/EslavaDev/ml-back#readme",
+  "homepage": "https://github.com/EslavaDev/test-mercado-fullstack#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
