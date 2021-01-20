@@ -3,6 +3,9 @@ import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { setSearchReduxStore } from '../../../store/layout/actions';
+import { IconML } from '../../atoms/icon-ml';
+import Shopping from '../../../assets/ic_shipping.png';
+import Shoppingx2 from '../../../assets/ic_shipping@2x.png';
 import {
   ImageCardItemsCatalog,
   ContainerPrincipalCardItemsCatalog,
@@ -17,6 +20,7 @@ export const CardItemsCatalog = ({
   picture,
   price,
   title,
+  free_shipping,
 }: ItemsEntity) => {
   const { push } = useHistory();
   const dispatch = useDispatch();
@@ -31,7 +35,12 @@ export const CardItemsCatalog = ({
       className="shadow-sm"
       onClick={handleClickCard}>
       <ColImageItemsCatalog lg={4} xl={3} xs={6} sm={3} md={4} className="p-0">
-        <ImageCardItemsCatalog width="180" height="180" src={picture} />
+        <ImageCardItemsCatalog
+          alt={id}
+          width="180"
+          height="180"
+          src={picture}
+        />
       </ColImageItemsCatalog>
       <Col
         lg={8}
@@ -42,12 +51,24 @@ export const CardItemsCatalog = ({
         className="d-flex flex-column align-items-center justify-content-center   p-0  m-0">
         <Row lg={12} className="w-100 p-0 m-0 mb-3">
           <ColContentItemsCatalog md={8} lg={10} xs={6} className=" p-0  m-0">
-            <TextItemsCatalog fontWeight="normal" fontSize={24}>
-              {Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: price.currency,
-              }).format(price.amount)}
-            </TextItemsCatalog>
+            <div className="price">
+              <TextItemsCatalog fontWeight="normal" fontSize={24}>
+                {Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: price.currency,
+                }).format(price.amount)}
+              </TextItemsCatalog>
+              {free_shipping && (
+                <IconML
+                  width="20"
+                  height="20"
+                  className="freeShipping"
+                  src={Shopping}
+                  alt={`shopping-${id}`}
+                  srcSet={`${Shoppingx2} 2x`}
+                />
+              )}
+            </div>
           </ColContentItemsCatalog>
           <ColContentItemsCatalog
             lg={2}

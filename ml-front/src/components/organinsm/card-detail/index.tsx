@@ -11,12 +11,25 @@ import {
 } from './styles';
 
 export const CardDetail = ({ item }: ItemDetailMercadolibre) => {
-  const { picture, price, title, description, condition, sold_quantity } = item;
+  const {
+    picture,
+    price,
+    title,
+    description,
+    condition,
+    sold_quantity,
+    id,
+  } = item;
   return (
     <WrapperItemDetail>
       <StyledRow>
         <StyledCol lg={9} md={9}>
-          <ImageCardItemsCatalog width="680" height="680" src={picture} />
+          <ImageCardItemsCatalog
+            alt={id}
+            width="680"
+            height="680"
+            src={picture}
+          />
         </StyledCol>
         <StyledCol lg={3} md={3}>
           <ItemInformationPrice

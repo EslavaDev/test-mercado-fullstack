@@ -9,7 +9,7 @@ exports.mapperItemDetail = (values) => {
     if(!values){
         return {}
     }
-    const {id, title, price, currency_id, pictures, condition, shipping, sold_quantity, descriptions} = values
+    const {id, title, price, currency_id, pictures, thumbnail, condition, shipping, sold_quantity, descriptions} = values
     return {
         author,
         item:{
@@ -20,7 +20,7 @@ exports.mapperItemDetail = (values) => {
                 amount: price,
                 decimals: 0.0,
             },
-            picture: pictures[0].url,
+            picture: (pictures && pictures[0].url) || thumbnail,
             condition,
             free_shipping: shipping && !!shipping.free_shipping,
             sold_quantity,
