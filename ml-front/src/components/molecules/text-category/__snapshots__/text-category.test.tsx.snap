@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextCategory works 1`] = `
+<div
+  class="sc-bdfBwQ ca-DIka"
+>
+  <p
+    class="sc-dlfnbm fAqtVb"
+  >
+    mockData
+  </p>
+   
+  <span
+    class="sc-gsTCUz gUGYDt"
+  >
+     
+    &gt;
+     
+  </span>
+</div>
+`;

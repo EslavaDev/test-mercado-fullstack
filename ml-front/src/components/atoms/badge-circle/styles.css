@@ -1,0 +1,12 @@
+.headquarter-content-item {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.headquarter-content-item-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
