@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { getItemById } from '../../../store/mercadolibre/actions';
+import {
+  clearMLSelected,
+  getItemById,
+} from '../../../store/mercadolibre/actions';
 import {
   getCategories,
   getMLDetail,
@@ -17,6 +20,9 @@ export const ItemDetail = () => {
   const itemDetailSelector = useSelector(getMLDetail);
   useEffect(() => {
     dispatch(getItemById(id));
+    return () => {
+      dispatch(clearMLSelected());
+    };
   }, [id, dispatch]);
   return (
     <Layout title="Item Detail" description="page to see the product detail">
